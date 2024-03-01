@@ -184,7 +184,7 @@ module	axixbar #(
 		// }}}
 		// }}}
 
-        // Myles: sha256 parameters
+        // : sha256 parameters
         parameter    [7:0]     MAXSTOREDFIRSTVALUE = 16,    // 16 
         parameter    [7:0]     MAXSTOREDFIRSTVALUE4PTR = 15,   // 63
         parameter    [11:0]    MAXBITSSTOREDONEBLOCK = 512,
@@ -203,7 +203,7 @@ module	axixbar #(
 		// e frame parameters
 		parameter [3:0] NUM_OF_SLICES_PER_FRAME = 8,
 
-        // Myles: uram parameters
+        // : uram parameters
         // mem_size = MEM_DWIDTH * 2^MEM_AWIDTH
         parameter MEM_AWIDTH = 13,  // Address Width
         parameter MEM_DWIDTH = 128,  // Data Width
@@ -388,7 +388,7 @@ module	axixbar #(
 	// combinatorial path length
 	localparam	OPT_AWW = 1'b1;
 
-    // Myles: SHA256 local params
+    // : SHA256 local params
     localparam MODE_SHA_256   = 1'h1;
 	localparam	[5:0]    SHA256_HASH_SIZE_IN_BYTES = SHA256_HASH_SIZE_IN_BITS / 8;
 	localparam  [1:0]	 SHA256_NUM_OF_CYCLES_NEEDED_4_URAM_W = SHA256_HASH_SIZE_IN_BITS / MEM_DWIDTH;
@@ -566,7 +566,7 @@ module	axixbar #(
 	reg	[NSFULL-1:0]	slave_awready, slave_wready, slave_arready;
 	// }}}
 
-    // Myles: Debug only parameters
+    // : Debug only parameters
     integer turn_to_start_logging;
     integer turn_to_start_logging_sub;
     reg [C_AXI_ADDR_WIDTH-1:0] last_m_wr_addr_reg;
@@ -762,7 +762,7 @@ module	axixbar #(
 	reg [31:0] working_y_hash [15:0];
 	reg [31:0] working_uv_hash [15:0];
 
-    // Myles: assignment of SHA256 e related
+    // : assignment of SHA256 e related
     assign sha256_core_block = {sha256_block_reg[00], sha256_block_reg[01], sha256_block_reg[02], sha256_block_reg[03],
                             sha256_block_reg[04], sha256_block_reg[05], sha256_block_reg[06], sha256_block_reg[07],
                             sha256_block_reg[08], sha256_block_reg[09], sha256_block_reg[10], sha256_block_reg[11],
@@ -1151,7 +1151,7 @@ module	axixbar #(
 
 					current_hashing_r_frame_y_total_size_in_bytes <= current_hashing_r_frame_y_total_size_in_bytes + SHA256_BLOCK_SIZE_IN_BYTES;
 				end
-				else if ((current_hashing_r_frame_y_total_size_in_bytes >= R_FRAME_Y_SIZE_IN_BYTES) && (!is_hashing_completed_y))    // Myles: done with a frame
+				else if ((current_hashing_r_frame_y_total_size_in_bytes >= R_FRAME_Y_SIZE_IN_BYTES) && (!is_hashing_completed_y))    // : done with a frame
 				begin
 
 					// debug: error checking
@@ -1248,7 +1248,7 @@ module	axixbar #(
 
 					current_hashing_r_frame_uv_total_size_in_bytes <= current_hashing_r_frame_uv_total_size_in_bytes + SHA256_BLOCK_SIZE_IN_BYTES;
 				end
-				else if ((current_hashing_r_frame_uv_total_size_in_bytes >= R_FRAME_UV_SIZE_IN_BYTES) && (!is_hashing_completed_uv))    // Myles: done with a frame
+				else if ((current_hashing_r_frame_uv_total_size_in_bytes >= R_FRAME_UV_SIZE_IN_BYTES) && (!is_hashing_completed_uv))    // : done with a frame
 				begin
 
 					// debug: error checking
@@ -2534,7 +2534,7 @@ module	axixbar #(
         end
 		// }}}
 
-        // Myles's reading on AW* channel
+        // 's reading on AW* channel
         always @(posedge S_AXI_ACLK)
         begin
             if (user_reset_signal)
@@ -2788,7 +2788,7 @@ module	axixbar #(
         // always @(negedge S_AXI_ACLK)
         begin
 
-            // For Myles's debugging
+            // For 's debugging
             if ((!S_AXI_ARESETN) || user_reset_signal)
             begin
                 // Sha256 related
@@ -2838,7 +2838,7 @@ module	axixbar #(
             begin
                 sha256_digest_valid_reg <= sha256_core_digest_valid;
 
-                // Myles: automatic init/next reset (to prevent recalculation)
+                // : automatic init/next reset (to prevent recalculation)
                 if (sha256_init_reg || sha256_next_reg)
                 begin
                     if ((sha256_init_next_reg_reset_counter == 4) && (!sha256_init_next_just_set_reg))

@@ -1142,7 +1142,7 @@ module	r_hasher_4_isp #(
 
 					current_hashing_r_frame_y_total_size_in_bytes <= current_hashing_r_frame_y_total_size_in_bytes + SHA256_BLOCK_SIZE_IN_BYTES;
 				end
-				else if ((current_hashing_r_frame_y_total_size_in_bytes >= R_FRAME_Y_SIZE_IN_BYTES) && (!is_hashing_completed_y))    // Myles: done with a frame
+				else if ((current_hashing_r_frame_y_total_size_in_bytes >= R_FRAME_Y_SIZE_IN_BYTES) && (!is_hashing_completed_y))    // : done with a frame
 				begin
 
 					// debug: error checking
@@ -1249,7 +1249,7 @@ module	r_hasher_4_isp #(
 
 					current_hashing_r_frame_uv_total_size_in_bytes <= current_hashing_r_frame_uv_total_size_in_bytes + SHA256_BLOCK_SIZE_IN_BYTES;
 				end
-				else if ((current_hashing_r_frame_uv_total_size_in_bytes >= R_FRAME_UV_SIZE_IN_BYTES) && (!is_hashing_completed_uv))    // Myles: done with a frame
+				else if ((current_hashing_r_frame_uv_total_size_in_bytes >= R_FRAME_UV_SIZE_IN_BYTES) && (!is_hashing_completed_uv))    // : done with a frame
 				begin
 
 					// debug: error checking
