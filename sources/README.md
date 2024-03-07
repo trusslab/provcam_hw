@@ -37,6 +37,7 @@ We provide design/implmentation documentation and a step-by-step guide to recrea
 - [ProvCam](https://github.com/trusslab/provcam/tree/main?tab=readme-ov-file#provcam-a-camera-module-with-self-contained-tcb-for-producing-verifiable-videos)
     - [Table of Contents](https://github.com/trusslab/provcam/tree/main?tab=readme-ov-file#table-of-contents)
     - [Hardware](https://github.com/trusslab/provcam_hw/tree/main/sources?tab=readme-ov-file#hardware)
+        - [GENERAL_HASHER (sha256_core.v)](https://github.com/trusslab/provcam_hw/tree/main/sources?tab=readme-ov-file#general_hasher-sha256_corev)
         - [ISP_HASHER (r_hasher_4_isp.v)](https://github.com/trusslab/provcam_hw/tree/main/sources?tab=readme-ov-file#isp_hasher-r_hasher_4_ispv)
         - [ENCODER_HASHER (axixbar.v)](https://github.com/trusslab/provcam_hw/tree/main/sources?tab=readme-ov-file#encoder_hasher-axixbarv)
     - [Build](https://github.com/trusslab/provcam/tree/main?tab=readme-ov-file#build)
@@ -57,6 +58,8 @@ We provide design/implmentation documentation and a step-by-step guide to recrea
     - [References](https://github.com/trusslab/provcam/tree/main?tab=readme-ov-file#references)
 
 ## Hardware
+
+### GENERAL_HASHER (sha256_core.v)
 
 ### ISP_HASHER (r_hasher_4_isp.v)
 
